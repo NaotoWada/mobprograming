@@ -10,8 +10,7 @@ public class BalancedParenthesesTest {
 
 	@Test
 	public void test_カッコペアが正しく指定された場合BALANCEDが返却される() {
-		PARENTHESES actual = BlncdPrnths.judge("()");
-		assertEquals(PARENTHESES.BALANCED, actual);
+		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("()"));
 	}
 	
 	@Test
