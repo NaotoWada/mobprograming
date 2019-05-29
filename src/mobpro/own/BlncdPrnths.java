@@ -41,13 +41,6 @@ public class BlncdPrnths {
 		return false;
 	}
 
-	public static boolean isHang(String string) {
-		if ("()[]".equals(string)) {
-			return false;
-		}
-		return true;
-	}
-
 	public static boolean isPairWhenEditingStack(Stack<String> stck, String prnths) {
 		if (OPEN_LIST.contains(prnths)) {
 			// 開きカッコの場合
@@ -66,7 +59,7 @@ public class BlncdPrnths {
 	}
 
 	public static boolean isPair(String stackElement, String target) {
-		if(CLOSE_LIST.contains(stackElement)) {
+		if (CLOSE_LIST.contains(stackElement)) {
 			throw new IllegalArgumentException("スタックされた要素に閉じカッコが入っていて不正です");
 		}
 		return PAIR.get(stackElement).equals(target);

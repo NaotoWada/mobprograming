@@ -85,10 +85,10 @@ public class BalancedParenthesesTest {
 
 	@Test
 	public void test_ペアフィールドのキーに閉じカッコを指定するとエラーが発生する() {
-		try{
+		try {
 			BlncdPrnths.isPair("]", "");
 			fail();
-		}catch(IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			String exceptMsg = e.getMessage();
 			assertEquals(exceptMsg, "スタックされた要素に閉じカッコが入っていて不正です");
 		}
