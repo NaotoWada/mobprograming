@@ -60,6 +60,18 @@ public class BalancedParenthesesTest {
 		assertEquals(stck.size(), 1);
 	}
 
+
+	@Test
+	public void test_入れ子の場合スタックに要素が残る() {
+		Stack<String> stck = new Stack<>();
+		stck.push("[");
+		stck.push("{");
+
+		stck = BlncdPrnths.editStack(stck, "]");
+		stck = BlncdPrnths.editStack(stck, "}");
+		assertEquals(stck.size(), 1);
+	}
+
 	@Test
 	public void test_最後が開きカッコの場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isLastOpen("["));
