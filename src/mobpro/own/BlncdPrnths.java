@@ -40,6 +40,7 @@ public class BlncdPrnths {
 
 	public static Stack<String> pushStack(Stack<String> stck, String string) {
 		if(CLOSE_LIST.contains(string)){
+			stck.pop();
 			return stck;
 		}
 		stck.push(string);
