@@ -21,6 +21,14 @@ public class BalancedParenthesesTest {
 		assertTrue(BalancedParentheses.isLastCharOpen("["));
 		assertTrue(BalancedParentheses.isLastCharOpen("("));
 		assertTrue(BalancedParentheses.isLastCharOpen("{"));
+		
+		assertTrue(BalancedParentheses.isLastCharOpen("]["));
+		assertTrue(BalancedParentheses.isLastCharOpen(")("));
+		assertTrue(BalancedParentheses.isLastCharOpen("}{"));
+		
+		assertFalse(BalancedParentheses.isLastCharOpen("]"));
+		assertFalse(BalancedParentheses.isLastCharOpen(")"));
+		assertFalse(BalancedParentheses.isLastCharOpen("}"));
 	}
 
 	@Test
