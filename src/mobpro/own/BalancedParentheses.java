@@ -16,8 +16,8 @@ public class BalancedParentheses {
 
 	public static boolean isFirstCharClosed(String string) {
 		if (CLOSE_LIST.contains(string.substring(0, 1))) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 }
