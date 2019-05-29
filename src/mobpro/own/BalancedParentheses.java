@@ -21,7 +21,7 @@ public class BalancedParentheses {
 		return false;
 	}
 
-	public static boolean isLastCharClosed(String string) {
+	public static boolean isLastCharOpen(String string) {
 		return false;
 	}
 }
