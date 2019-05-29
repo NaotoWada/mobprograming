@@ -72,6 +72,15 @@ public class BlncdPrnths {
 		if(isOdd(string)) {
 			return PARENTHESES.UNBALANCED;
 		}
+		
+		Stack<String> stk = new Stack<>();
+		for(int i=0; i<string.length(); i++) {
+			String elm = string.substring(i, i+1);
+			boolean isContinue = isPairWhenEditingStack(stk, elm);
+			if(!isContinue) {
+				return PARENTHESES.UNBALANCED;
+			}
+		}
 		return PARENTHESES.BALANCED;
 	}
 }
