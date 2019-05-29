@@ -21,7 +21,6 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_閉じカッコと同じ種類の開きカッコがPOPされる() {
 		Stack<String> stck = new Stack<>();
-		stck.push("[");
 		stck.push("{");
 		stck.push("(");
 		stck.push("[");
@@ -29,6 +28,9 @@ public class BalancedParenthesesTest {
 		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "]"));
 		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
 		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "}"));
+		assertTrue(stck.isEmpty());
+
+		stck.push("[");
 		assertFalse(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
 		assertEquals(stck.size(), 1);
 	}
