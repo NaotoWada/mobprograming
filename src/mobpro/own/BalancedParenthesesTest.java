@@ -2,6 +2,8 @@ package mobpro.own;
 
 import static org.junit.Assert.*;
 
+import java.util.Queue;
+
 import org.junit.Test;
 
 public class BalancedParenthesesTest {
@@ -20,7 +22,14 @@ public class BalancedParenthesesTest {
 	public void test_入れ子の場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isHang("([)]"));
 		assertFalse(BlncdPrnths.isHang("()[]"));
-		assertFalse(BlncdPrnths.isHang("[][]"));
+		//assertFalse(BlncdPrnths.isHang("[][]"));
+	}
+	
+	@Test
+	public void test_開きカッコの場合その文字がキューにつまる() {
+		Queue<String> q = BlncdPrnths.addOpenQueue("(");
+		String poll = q.poll();
+		assertEquals(poll, "(");
 	}
 
 	@Test

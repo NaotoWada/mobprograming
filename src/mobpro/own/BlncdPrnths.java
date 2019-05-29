@@ -2,6 +2,7 @@ package mobpro.own;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Queue;
 
 public class BlncdPrnths {
 
@@ -35,5 +36,9 @@ public class BlncdPrnths {
 			return false;
 		}
 		return true;
+	}
+
+	public static Queue<String> addOpenQueue(String string) {
+		return null;
 	}
 }
