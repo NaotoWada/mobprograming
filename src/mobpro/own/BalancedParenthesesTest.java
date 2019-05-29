@@ -15,19 +15,26 @@ public class BalancedParenthesesTest {
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("([{}])"));
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("{[()[]({}){}()]}"));
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("()[]{}()"));
-		
+
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge(")("));
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("("));
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("[["));
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("[[]"));
 	}
+
 	@Test
 	public void test_カッコペアが入れ子指定された場合UNBALANCEDが返却される() {
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("({)}"));
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("([{}][)]"));
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("[(][{}])"));
 	}
-	
+
+	@Test
+	public void test_すべてが開きまたは閉じの場合UNBALANCEDが返却される() {
+		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("(((("));
+		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("))))"));
+	}
+
 	@Test
 	public void test_奇数長の場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isOdd("["));
