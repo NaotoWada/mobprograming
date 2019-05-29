@@ -24,9 +24,13 @@ public class BlncdPrnths {
 
 	public static boolean isLastOpen(String string) {
 		int len = string.length();
-		if (OPEN_LIST.contains(string.substring(len-1, len))) {
+		if (OPEN_LIST.contains(string.substring(len - 1, len))) {
 			return true;
 		}
+		return false;
+	}
+
+	public static boolean isHang(String string) {
 		return false;
 	}
 }

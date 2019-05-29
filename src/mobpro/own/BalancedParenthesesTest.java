@@ -17,15 +17,20 @@ public class BalancedParenthesesTest {
 	}
 
 	@Test
+	public void test_入れ子の場合はTrueが返却される() {
+		assertTrue(BlncdPrnths.isHang("([)]"));
+	}
+
+	@Test
 	public void test_最後が開きカッコの場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isLastOpen("["));
 		assertTrue(BlncdPrnths.isLastOpen("("));
 		assertTrue(BlncdPrnths.isLastOpen("{"));
-		
+
 		assertTrue(BlncdPrnths.isLastOpen("]["));
 		assertTrue(BlncdPrnths.isLastOpen(")("));
 		assertTrue(BlncdPrnths.isLastOpen("}{"));
-		
+
 		assertFalse(BlncdPrnths.isLastOpen("]"));
 		assertFalse(BlncdPrnths.isLastOpen(")"));
 		assertFalse(BlncdPrnths.isLastOpen("}"));
@@ -40,7 +45,7 @@ public class BalancedParenthesesTest {
 		assertTrue(BlncdPrnths.isFirstClose("]["));
 		assertTrue(BlncdPrnths.isFirstClose(")("));
 		assertTrue(BlncdPrnths.isFirstClose("}{"));
-		
+
 		assertFalse(BlncdPrnths.isFirstClose("["));
 		assertFalse(BlncdPrnths.isFirstClose("("));
 		assertFalse(BlncdPrnths.isFirstClose("{"));
