@@ -18,7 +18,9 @@ public class BalancedParenthesesTest {
 
 	@Test
 	public void test_最後が開きカッコの場合はTrueが返却される() {
-		assertTrue(BalancedParentheses.isLastCharOpen("]"));
+		assertTrue(BalancedParentheses.isLastCharOpen("["));
+		assertTrue(BalancedParentheses.isLastCharOpen("("));
+		assertTrue(BalancedParentheses.isLastCharOpen("{"));
 	}
 
 	@Test

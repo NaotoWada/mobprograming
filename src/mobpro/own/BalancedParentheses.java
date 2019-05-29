@@ -6,6 +6,7 @@ import java.util.List;
 public class BalancedParentheses {
 
 	private static final List<String> CLOSE_LIST = Arrays.asList("]", ")", "}");
+	private static final List<String> OPEN_LIST = Arrays.asList("[", "(", "{");
 
 	public static boolean isOdd(String parentheses) {
 		if (parentheses.length() % 2 == 0) {
@@ -22,6 +23,10 @@ public class BalancedParentheses {
 	}
 
 	public static boolean isLastCharOpen(String string) {
+		int len = string.length();
+		if (OPEN_LIST.contains(string.substring(len-1, len))) {
+			return true;
+		}
 		return false;
 	}
 }
