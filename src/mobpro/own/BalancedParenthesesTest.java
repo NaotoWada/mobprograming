@@ -71,7 +71,7 @@ public class BalancedParenthesesTest {
 		assertFalse(BlncdPrnths.isFirstClose("("));
 		assertFalse(BlncdPrnths.isFirstClose("{"));
 	}
-	
+
 	@Test
 	public void test_同じ種類のカッコの場合trueを返却する() {
 		assertTrue(BlncdPrnths.isPair("[", "]"));
@@ -81,5 +81,16 @@ public class BalancedParenthesesTest {
 		assertFalse(BlncdPrnths.isPair("{", "]"));
 		assertFalse(BlncdPrnths.isPair("[", ")"));
 		assertFalse(BlncdPrnths.isPair("(", "}"));
+	}
+
+	@Test
+	public void test_ペアフィールドのキーに閉じカッコを指定するとエラーが発生する() {
+		try{
+			BlncdPrnths.isPair("]", "");
+			fail();
+		}catch(IllegalArgumentException e) {
+			String exceptMsg = e.getMessage();
+			assertEquals(exceptMsg, "スタックされた要素に閉じカッコが入っていて不正です");
+		}
 	}
 }
