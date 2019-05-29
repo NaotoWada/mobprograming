@@ -13,6 +13,7 @@ public class BalancedParenthesesTest {
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("()"));
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("([])"));
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("([{}])"));
+		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("{[()[]({}){}()]}"));
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("()[]{}()"));
 		
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge(")("));
