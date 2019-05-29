@@ -16,4 +16,9 @@ public class BalancedParenthesesTest {
 		boolean actual = BalancedParentheses.isOdd("[[");
 		assertFalse(actual);
 	}
+	@Test
+	public void test_最初が閉じカッコの場合はFlaseが返却される() {
+		boolean actual = BalancedParentheses.isFirstCharClosed("]");
+		assertFalse(actual);
+	}
 }

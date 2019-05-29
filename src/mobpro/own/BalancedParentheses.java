@@ -8,4 +8,8 @@ public class BalancedParentheses {
 		}
 		return true;
 	}
+
+	public static boolean isFirstCharClosed(String string) {
+		return false;
+	}
 }
