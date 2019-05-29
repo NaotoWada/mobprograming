@@ -33,16 +33,16 @@ public class BalancedParenthesesTest {
 
 	@Test
 	public void test_最初が閉じカッコの場合はTrueが返却される() {
-		assertTrue(BalancedParentheses.isFirstCharClosed("]"));
-		assertTrue(BalancedParentheses.isFirstCharClosed(")"));
-		assertTrue(BalancedParentheses.isFirstCharClosed("}"));
+		assertTrue(BalancedParentheses.isFirstClose("]"));
+		assertTrue(BalancedParentheses.isFirstClose(")"));
+		assertTrue(BalancedParentheses.isFirstClose("}"));
 
-		assertTrue(BalancedParentheses.isFirstCharClosed("]["));
-		assertTrue(BalancedParentheses.isFirstCharClosed(")("));
-		assertTrue(BalancedParentheses.isFirstCharClosed("}{"));
+		assertTrue(BalancedParentheses.isFirstClose("]["));
+		assertTrue(BalancedParentheses.isFirstClose(")("));
+		assertTrue(BalancedParentheses.isFirstClose("}{"));
 		
-		assertFalse(BalancedParentheses.isFirstCharClosed("["));
-		assertFalse(BalancedParentheses.isFirstCharClosed("("));
-		assertFalse(BalancedParentheses.isFirstCharClosed("{"));
+		assertFalse(BalancedParentheses.isFirstClose("["));
+		assertFalse(BalancedParentheses.isFirstClose("("));
+		assertFalse(BalancedParentheses.isFirstClose("{"));
 	}
 }
