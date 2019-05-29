@@ -11,6 +11,7 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_カッコペアが正しく指定された場合BALANCEDが返却される() {
 		assertEquals(PARENTHESES.BALANCED, BlncdPrnths.judge("()"));
+		assertEquals(PARENTHESES.NOT, BlncdPrnths.judge(")("));
 	}
 	
 	@Test
