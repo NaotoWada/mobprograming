@@ -2,7 +2,7 @@ package mobpro.own;
 
 import static org.junit.Assert.*;
 
-import java.util.Queue;
+import java.util.Stack;
 
 import org.junit.Test;
 
@@ -28,9 +28,10 @@ public class BalancedParenthesesTest {
 	
 	@Test
 	public void test_開きカッコの場合その文字がキューにつまる() {
-		Queue<String> q = BlncdPrnths.addOpenQueue("(");
-		String poll = q.poll();
+		Stack<String> stack = BlncdPrnths.addOpenQueue("(");
+		String poll = stack.pop();
 		assertEquals(poll, "(");
+		assertTrue(stack.isEmpty());
 	}
 
 	@Test
