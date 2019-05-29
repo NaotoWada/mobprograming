@@ -38,6 +38,15 @@ public class BalancedParenthesesTest {
 		Stack<String> stackClose = BlncdPrnths.pushStack(stck, ")");
 		assertTrue(stackClose.isEmpty());
 	}
+	
+	@Test
+	public void test_閉じカッコの場合スタックに積まれた開きカッコがスタックから削除される() {
+		Stack<String> stck = new Stack<>();
+		stck.push("(");
+		
+		Stack<String> stackClose = BlncdPrnths.pushStack(stck, ")");
+		assertTrue(stackClose.isEmpty());
+	}
 
 	@Test
 	public void test_最後が開きカッコの場合はTrueが返却される() {
