@@ -66,6 +66,9 @@ public class BlncdPrnths {
 	}
 
 	public static boolean isPair(String stackElement, String target) {
+		if(CLOSE_LIST.contains(stackElement)) {
+			throw new IllegalArgumentException("スタックされた要素に閉じカッコが入っていて不正です");
+		}
 		return PAIR.get(stackElement).equals(target);
 	}
 }
