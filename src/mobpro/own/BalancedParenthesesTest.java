@@ -34,9 +34,6 @@ public class BalancedParenthesesTest {
 		String poll = stackOpen.pop();
 		assertEquals(poll, "(");
 		assertTrue(stackOpen.isEmpty());
-
-		Stack<String> stackClose = BlncdPrnths.pushStack(stck, ")");
-		assertTrue(stackClose.isEmpty());
 	}
 	
 	@Test
