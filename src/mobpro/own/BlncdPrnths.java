@@ -66,6 +66,6 @@ public class BlncdPrnths {
 	}
 
 	public static PARENTHESES judge(String string) {
-		return PARENTHESES.NOT;
+		return PARENTHESES.BALANCED;
 	}
 }
