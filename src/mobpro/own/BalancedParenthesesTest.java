@@ -49,9 +49,11 @@ public class BalancedParenthesesTest {
 	public void test_閉じカッコと同じ種類の開きカッコがPOPされる() {
 		Stack<String> stck = new Stack<>();
 		stck.push("(");
-		
-		Stack<String> stackClose = BlncdPrnths.editStack(stck, ")");
-		assertTrue(stackClose.isEmpty());
+		stck.push("[");
+
+		stck = BlncdPrnths.editStack(stck, ")");
+		stck = BlncdPrnths.editStack(stck, ")");
+		assertEquals(stck.size(), 1);
 	}
 
 	@Test
