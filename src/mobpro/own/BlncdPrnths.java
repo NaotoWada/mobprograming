@@ -64,4 +64,8 @@ public class BlncdPrnths {
 			return false;
 		}
 	}
+
+	public static boolean isPair(String stackElement, String target) {
+		return PAIR.get(stackElement).equals(target);
+	}
 }

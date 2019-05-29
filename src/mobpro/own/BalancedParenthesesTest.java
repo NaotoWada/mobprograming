@@ -71,4 +71,9 @@ public class BalancedParenthesesTest {
 		assertFalse(BlncdPrnths.isFirstClose("("));
 		assertFalse(BlncdPrnths.isFirstClose("{"));
 	}
+	
+	@Test
+	public void test_同じ種類のカッコの場合trueを返却する() {
+		assertTrue(BlncdPrnths.isPair("[", "]"));
+	}
 }
