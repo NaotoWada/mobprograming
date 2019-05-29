@@ -48,7 +48,7 @@ public class BlncdPrnths {
 		return true;
 	}
 
-	public static boolean isPairEditStack(Stack<String> stck, String prnths) {
+	public static boolean isPairWhenEditingStack(Stack<String> stck, String prnths) {
 		if (CLOSE_LIST.contains(prnths)) {
 			String stackedPair = PAIR.get(stck.lastElement());
 			if (prnths.equals(stackedPair)) {
