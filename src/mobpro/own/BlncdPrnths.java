@@ -1,13 +1,23 @@
 package mobpro.own;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class BlncdPrnths {
 
 	private static final List<String> CLOSE_LIST = Arrays.asList("]", ")", "}");
 	private static final List<String> OPEN_LIST = Arrays.asList("[", "(", "{");
+	private static final Map<String, String> PAIR = new HashMap<>();
+	static {
+		for(int i=0; i<3; i++) {
+			String op = OPEN_LIST.get(i);
+			String cl = CLOSE_LIST.get(i);
+			PAIR.put(op, cl);
+		}
+	}
 
 	public static boolean isOdd(String parentheses) {
 		if (parentheses.length() % 2 == 0) {
@@ -38,15 +48,15 @@ public class BlncdPrnths {
 		return true;
 	}
 
-	public static Stack<String> editStack(Stack<String> stck, String string) {
-		if(CLOSE_LIST.contains(string)){
-			String poped = stck.lastElement();
-			if(!poped.equals("[")) {
+	public static Stack<String> editStack(Stack<String> stck, String prnths) {
+		if(CLOSE_LIST.contains(prnths)){
+			String stackedPair = PAIR.get(stck.lastElement());
+			if(prnths.equals(stackedPair)) {
 				stck.pop();
 			}
 			return stck;
 		}
-		stck.push(string);
+		stck.push(prnths);
 		return stck;
 	}
 }
