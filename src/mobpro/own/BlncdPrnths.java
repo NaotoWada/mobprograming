@@ -49,8 +49,7 @@ public class BlncdPrnths {
 		}
 
 		// 閉じカッコの場合
-		String stackedPair = PAIR.get(stck.lastElement());
-		if (prnths.equals(stackedPair)) {
+		if (isPair(stck.lastElement(), prnths)) {
 			stck.pop();
 			return true;
 		} else {
