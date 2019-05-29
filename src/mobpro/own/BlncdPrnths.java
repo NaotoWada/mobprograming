@@ -66,6 +66,9 @@ public class BlncdPrnths {
 	}
 
 	public static PARENTHESES judge(String string) {
+		if(isFirstClose(string) || isLastOpen(string)) {
+			return PARENTHESES.NOT;
+		}
 		return PARENTHESES.BALANCED;
 	}
 }
