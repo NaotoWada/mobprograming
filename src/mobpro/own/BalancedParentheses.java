@@ -20,4 +20,8 @@ public class BalancedParentheses {
 		}
 		return false;
 	}
+
+	public static boolean isLastCharClosed(String string) {
+		return false;
+	}
 }
