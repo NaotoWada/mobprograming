@@ -27,15 +27,15 @@ public class BalancedParenthesesTest {
 	}
 	
 	@Test
-	public void test_開きカッコの場合その文字がキューにつまる() {
+	public void test_開きカッコの場合その文字がスタックに積まれる() {
 		Stack<String> stck = new Stack<>();
 		
-		Stack<String> stackOpen = BlncdPrnths.addOpenQueue(stck, "(");
+		Stack<String> stackOpen = BlncdPrnths.pushStack(stck, "(");
 		String poll = stackOpen.pop();
 		assertEquals(poll, "(");
 		assertTrue(stackOpen.isEmpty());
 
-		Stack<String> stackClose = BlncdPrnths.addOpenQueue(stck, ")");
+		Stack<String> stackClose = BlncdPrnths.pushStack(stck, ")");
 		assertTrue(stackClose.isEmpty());
 	}
 

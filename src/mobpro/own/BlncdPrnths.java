@@ -38,7 +38,7 @@ public class BlncdPrnths {
 		return true;
 	}
 
-	public static Stack<String> addOpenQueue(Stack<String> stck, String string) {
+	public static Stack<String> pushStack(Stack<String> stck, String string) {
 		if(CLOSE_LIST.contains(string)){
 			return stck;
 		}
