@@ -21,5 +21,13 @@ public class BalancedParenthesesTest {
 		assertFalse(BalancedParentheses.isFirstCharClosed("]"));
 		assertFalse(BalancedParentheses.isFirstCharClosed(")"));
 		assertFalse(BalancedParentheses.isFirstCharClosed("}"));
+
+		assertTrue(BalancedParentheses.isFirstCharClosed("["));
+		assertTrue(BalancedParentheses.isFirstCharClosed("("));
+		assertTrue(BalancedParentheses.isFirstCharClosed("{"));
+		
+		assertFalse(BalancedParentheses.isFirstCharClosed("]["));
+		assertFalse(BalancedParentheses.isFirstCharClosed(")("));
+		assertFalse(BalancedParentheses.isFirstCharClosed("}{"));
 	}
 }
