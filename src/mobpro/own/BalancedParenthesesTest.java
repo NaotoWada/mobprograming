@@ -26,10 +26,10 @@ public class BalancedParenthesesTest {
 		stck.push("(");
 		stck.push("[");
 
-		assertTrue(BlncdPrnths.editStack(stck, "]"));
-		assertTrue(BlncdPrnths.editStack(stck, ")"));
-		assertTrue(BlncdPrnths.editStack(stck, "}"));
-		assertFalse(BlncdPrnths.editStack(stck, ")"));
+		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "]"));
+		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
+		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "}"));
+		assertFalse(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
 		assertEquals(stck.size(), 1);
 	}
 
@@ -39,8 +39,8 @@ public class BalancedParenthesesTest {
 		stck.push("[");
 		stck.push("{");
 
-		assertFalse(BlncdPrnths.editStack(stck, "]"));
-		assertTrue(BlncdPrnths.editStack(stck, "}"));
+		assertFalse(BlncdPrnths.isPairWhenEditingStack(stck, "]"));
+		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "}"));
 		assertEquals(stck.size(), 1);
 	}
 
