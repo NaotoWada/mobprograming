@@ -25,11 +25,11 @@ public class BalancedParenthesesTest {
 		//TODO:キュー実装が終わったら修正する
 		//assertFalse(BlncdPrnths.isHang("[][]"));
 	}
-	
+
 	@Test
 	public void test_開きカッコの場合その文字がスタックに積まれる() {
 		Stack<String> stck = new Stack<>();
-		
+
 		Stack<String> stackOpen = BlncdPrnths.editStack(stck, "(");
 		String poll = stackOpen.pop();
 		assertEquals(poll, "(");
@@ -40,11 +40,11 @@ public class BalancedParenthesesTest {
 	public void test_閉じカッコの場合スタックに積まれた開きカッコがスタックから削除される() {
 		Stack<String> stck = new Stack<>();
 		stck.push("(");
-		
+
 		Stack<String> stackClose = BlncdPrnths.editStack(stck, ")");
 		assertTrue(stackClose.isEmpty());
 	}
-	
+
 	@Test
 	public void test_閉じカッコと同じ種類の開きカッコがPOPされる() {
 		Stack<String> stck = new Stack<>();

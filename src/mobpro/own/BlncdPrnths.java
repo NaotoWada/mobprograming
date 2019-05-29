@@ -12,7 +12,7 @@ public class BlncdPrnths {
 	private static final List<String> OPEN_LIST = Arrays.asList("[", "(", "{");
 	private static final Map<String, String> PAIR = new HashMap<>();
 	static {
-		for(int i=0; i<3; i++) {
+		for (int i = 0; i < 3; i++) {
 			String op = OPEN_LIST.get(i);
 			String cl = CLOSE_LIST.get(i);
 			PAIR.put(op, cl);
@@ -49,9 +49,9 @@ public class BlncdPrnths {
 	}
 
 	public static Stack<String> editStack(Stack<String> stck, String prnths) {
-		if(CLOSE_LIST.contains(prnths)){
+		if (CLOSE_LIST.contains(prnths)) {
 			String stackedPair = PAIR.get(stck.lastElement());
-			if(prnths.equals(stackedPair)) {
+			if (prnths.equals(stackedPair)) {
 				stck.pop();
 			}
 			return stck;
