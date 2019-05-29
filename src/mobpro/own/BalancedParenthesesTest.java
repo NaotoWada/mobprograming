@@ -75,5 +75,11 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_同じ種類のカッコの場合trueを返却する() {
 		assertTrue(BlncdPrnths.isPair("[", "]"));
+		assertTrue(BlncdPrnths.isPair("(", ")"));
+		assertTrue(BlncdPrnths.isPair("{", "}"));
+
+		assertFalse(BlncdPrnths.isPair("{", "]"));
+		assertFalse(BlncdPrnths.isPair("[", ")"));
+		assertFalse(BlncdPrnths.isPair("(", "}"));
 	}
 }
