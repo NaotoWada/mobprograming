@@ -40,9 +40,9 @@ public class BlncdPrnths {
 
 	public static Stack<String> editStack(Stack<String> stck, String string) {
 		if(CLOSE_LIST.contains(string)){
-			String poped = stck.pop();
-			if(poped.equals("[")) {
-				stck.push("[");
+			String poped = stck.lastElement();
+			if(!poped.equals("[")) {
+				stck.pop();
 			}
 			return stck;
 		}
