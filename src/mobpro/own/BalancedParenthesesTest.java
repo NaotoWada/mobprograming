@@ -30,7 +30,7 @@ public class BalancedParenthesesTest {
 	public void test_開きカッコの場合その文字がスタックに積まれる() {
 		Stack<String> stck = new Stack<>();
 		
-		Stack<String> stackOpen = BlncdPrnths.pushStack(stck, "(");
+		Stack<String> stackOpen = BlncdPrnths.editStack(stck, "(");
 		String poll = stackOpen.pop();
 		assertEquals(poll, "(");
 		assertTrue(stackOpen.isEmpty());
@@ -41,7 +41,7 @@ public class BalancedParenthesesTest {
 		Stack<String> stck = new Stack<>();
 		stck.push("(");
 		
-		Stack<String> stackClose = BlncdPrnths.pushStack(stck, ")");
+		Stack<String> stackClose = BlncdPrnths.editStack(stck, ")");
 		assertTrue(stackClose.isEmpty());
 	}
 
