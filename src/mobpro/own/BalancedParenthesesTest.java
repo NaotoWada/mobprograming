@@ -19,33 +19,6 @@ public class BalancedParenthesesTest {
 	}
 
 	@Test
-	public void test_入れ子の場合はTrueが返却される() {
-		assertTrue(BlncdPrnths.isHang("([)]"));
-		assertFalse(BlncdPrnths.isHang("()[]"));
-		//TODO:キュー実装が終わったら修正する
-		//assertFalse(BlncdPrnths.isHang("[][]"));
-	}
-
-	@Test
-	public void test_開きカッコの場合その文字がスタックに積まれる() {
-		Stack<String> stck = new Stack<>();
-
-		Stack<String> stackOpen = BlncdPrnths.editStack(stck, "(");
-		String poll = stackOpen.pop();
-		assertEquals(poll, "(");
-		assertTrue(stackOpen.isEmpty());
-	}
-
-	@Test
-	public void test_閉じカッコの場合スタックに積まれた開きカッコがスタックから削除される() {
-		Stack<String> stck = new Stack<>();
-		stck.push("(");
-
-		Stack<String> stackClose = BlncdPrnths.editStack(stck, ")");
-		assertTrue(stackClose.isEmpty());
-	}
-
-	@Test
 	public void test_閉じカッコと同じ種類の開きカッコがPOPされる() {
 		Stack<String> stck = new Stack<>();
 		stck.push("[");
@@ -59,7 +32,6 @@ public class BalancedParenthesesTest {
 		stck = BlncdPrnths.editStack(stck, ")");
 		assertEquals(stck.size(), 1);
 	}
-
 
 	@Test
 	public void test_入れ子の場合スタックに要素が残る() {
