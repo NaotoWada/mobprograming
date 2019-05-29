@@ -19,5 +19,7 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_最初が閉じカッコの場合はFlaseが返却される() {
 		assertFalse(BalancedParentheses.isFirstCharClosed("]"));
+		assertFalse(BalancedParentheses.isFirstCharClosed(")"));
+		assertFalse(BalancedParentheses.isFirstCharClosed("}"));
 	}
 }
