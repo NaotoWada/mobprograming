@@ -64,4 +64,8 @@ public class BlncdPrnths {
 		}
 		return PAIR.get(stackElement).equals(target);
 	}
+
+	public static PARENTHESES judge(String string) {
+		return PARENTHESES.NOT;
+	}
 }

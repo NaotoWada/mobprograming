@@ -9,6 +9,12 @@ import org.junit.Test;
 public class BalancedParenthesesTest {
 
 	@Test
+	public void test_カッコペアが正しく指定された場合BALANCEDが返却される() {
+		PARENTHESES actual = BlncdPrnths.judge("()");
+		assertEquals(PARENTHESES.BALANCED, actual);
+	}
+	
+	@Test
 	public void test_奇数長の場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isOdd("["));
 		assertFalse(BlncdPrnths.isOdd("[["));
