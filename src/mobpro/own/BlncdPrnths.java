@@ -49,16 +49,19 @@ public class BlncdPrnths {
 	}
 
 	public static boolean isPairWhenEditingStack(Stack<String> stck, String prnths) {
-		if (CLOSE_LIST.contains(prnths)) {
-			String stackedPair = PAIR.get(stck.lastElement());
-			if (prnths.equals(stackedPair)) {
-				stck.pop();
-				return true;
-			}else {
-				return false;
-			}
+		if (OPEN_LIST.contains(prnths)) {
+			// 開きカッコの場合
+			stck.push(prnths);
+			return true;
 		}
-		stck.push(prnths);
-		return true;
+
+		// 閉じカッコの場合
+		String stackedPair = PAIR.get(stck.lastElement());
+		if (prnths.equals(stackedPair)) {
+			stck.pop();
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
