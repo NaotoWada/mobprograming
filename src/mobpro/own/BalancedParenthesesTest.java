@@ -8,41 +8,41 @@ public class BalancedParenthesesTest {
 
 	@Test
 	public void test_奇数長の場合はTrueが返却される() {
-		assertTrue(BalancedParentheses.isOdd("["));
+		assertTrue(BlncdPrnths.isOdd("["));
 	}
 
 	@Test
 	public void test_偶数長の場合はFalseが返却される() {
-		assertFalse(BalancedParentheses.isOdd("[["));
+		assertFalse(BlncdPrnths.isOdd("[["));
 	}
 
 	@Test
 	public void test_最後が開きカッコの場合はTrueが返却される() {
-		assertTrue(BalancedParentheses.isLastCharOpen("["));
-		assertTrue(BalancedParentheses.isLastCharOpen("("));
-		assertTrue(BalancedParentheses.isLastCharOpen("{"));
+		assertTrue(BlncdPrnths.isLastOpen("["));
+		assertTrue(BlncdPrnths.isLastOpen("("));
+		assertTrue(BlncdPrnths.isLastOpen("{"));
 		
-		assertTrue(BalancedParentheses.isLastCharOpen("]["));
-		assertTrue(BalancedParentheses.isLastCharOpen(")("));
-		assertTrue(BalancedParentheses.isLastCharOpen("}{"));
+		assertTrue(BlncdPrnths.isLastOpen("]["));
+		assertTrue(BlncdPrnths.isLastOpen(")("));
+		assertTrue(BlncdPrnths.isLastOpen("}{"));
 		
-		assertFalse(BalancedParentheses.isLastCharOpen("]"));
-		assertFalse(BalancedParentheses.isLastCharOpen(")"));
-		assertFalse(BalancedParentheses.isLastCharOpen("}"));
+		assertFalse(BlncdPrnths.isLastOpen("]"));
+		assertFalse(BlncdPrnths.isLastOpen(")"));
+		assertFalse(BlncdPrnths.isLastOpen("}"));
 	}
 
 	@Test
 	public void test_最初が閉じカッコの場合はTrueが返却される() {
-		assertTrue(BalancedParentheses.isFirstClose("]"));
-		assertTrue(BalancedParentheses.isFirstClose(")"));
-		assertTrue(BalancedParentheses.isFirstClose("}"));
+		assertTrue(BlncdPrnths.isFirstClose("]"));
+		assertTrue(BlncdPrnths.isFirstClose(")"));
+		assertTrue(BlncdPrnths.isFirstClose("}"));
 
-		assertTrue(BalancedParentheses.isFirstClose("]["));
-		assertTrue(BalancedParentheses.isFirstClose(")("));
-		assertTrue(BalancedParentheses.isFirstClose("}{"));
+		assertTrue(BlncdPrnths.isFirstClose("]["));
+		assertTrue(BlncdPrnths.isFirstClose(")("));
+		assertTrue(BlncdPrnths.isFirstClose("}{"));
 		
-		assertFalse(BalancedParentheses.isFirstClose("["));
-		assertFalse(BalancedParentheses.isFirstClose("("));
-		assertFalse(BalancedParentheses.isFirstClose("{"));
+		assertFalse(BlncdPrnths.isFirstClose("["));
+		assertFalse(BlncdPrnths.isFirstClose("("));
+		assertFalse(BlncdPrnths.isFirstClose("{"));
 	}
 }
