@@ -53,8 +53,10 @@ public class BlncdPrnths {
 			String stackedPair = PAIR.get(stck.lastElement());
 			if (prnths.equals(stackedPair)) {
 				stck.pop();
+				return true;
+			}else {
+				return false;
 			}
-			return false;
 		}
 		stck.push(prnths);
 		return true;
