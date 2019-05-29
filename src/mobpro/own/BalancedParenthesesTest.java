@@ -19,6 +19,7 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_入れ子の場合はTrueが返却される() {
 		assertTrue(BlncdPrnths.isHang("([)]"));
+		assertFalse(BlncdPrnths.isHang("()[]"));
 	}
 
 	@Test

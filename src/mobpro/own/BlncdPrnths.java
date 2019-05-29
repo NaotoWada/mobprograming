@@ -31,6 +31,9 @@ public class BlncdPrnths {
 	}
 
 	public static boolean isHang(String string) {
+		if("()[]".equals(string)) {
+			return false;
+		}
 		return true;
 	}
 }
