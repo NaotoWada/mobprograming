@@ -69,6 +69,9 @@ public class BlncdPrnths {
 		if(isFirstClose(string) || isLastOpen(string)) {
 			return PARENTHESES.UNBALANCED;
 		}
+		if(isOdd(string)) {
+			return PARENTHESES.UNBALANCED;
+		}
 		return PARENTHESES.BALANCED;
 	}
 }
