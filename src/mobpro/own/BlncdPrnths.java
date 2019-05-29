@@ -48,15 +48,15 @@ public class BlncdPrnths {
 		return true;
 	}
 
-	public static Stack<String> editStack(Stack<String> stck, String prnths) {
+	public static boolean editStack(Stack<String> stck, String prnths) {
 		if (CLOSE_LIST.contains(prnths)) {
 			String stackedPair = PAIR.get(stck.lastElement());
 			if (prnths.equals(stackedPair)) {
 				stck.pop();
 			}
-			return stck;
+			return false;
 		}
 		stck.push(prnths);
-		return stck;
+		return true;
 	}
 }
