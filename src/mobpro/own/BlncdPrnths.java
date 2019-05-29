@@ -57,6 +57,15 @@ public class BlncdPrnths {
 		}
 	}
 
+	/**
+	 * カッコが同じ種類のペアかどうか判定する.
+	 * <p>第一引数に閉じカッコを指定した場合、使用条件に合わないので{@code IllegalArgumentException}をスローする
+	 * @param stackElement
+	 * 	スタックされたカッコ要素
+	 * @param target
+	 * 	判定したいカッコ要素
+	 * @return 同じ種類の開きカッコに対応した閉じカッコであればtrue
+	 */
 	public static boolean isPair(String stackElement, String target) {
 		if (CLOSE_LIST.contains(stackElement)) {
 			throw new IllegalArgumentException("スタックされた要素に閉じカッコが入っていて不正です");
@@ -65,21 +74,26 @@ public class BlncdPrnths {
 	}
 
 	public static PARENTHESES judge(String string) {
-		if(isFirstClose(string) || isLastOpen(string)) {
+		if (isFirstClose(string) || isLastOpen(string)) {
+			// 最初と最後の要素が規定外の場合
 			return PARENTHESES.UNBALANCED;
 		}
-		if(isOdd(string)) {
+		if (isOdd(string)) {
+			// 奇数の場合は規定外
 			return PARENTHESES.UNBALANCED;
 		}
-		
+
+		// スタックに詰めつつ判定を行う。1回でも入れ子になったら終了
 		Stack<String> stk = new Stack<>();
-		for(int i=0; i<string.length(); i++) {
-			String elm = string.substring(i, i+1);
+		for (int i = 0; i < string.length(); i++) {
+			String elm = string.substring(i, i + 1);
 			boolean isContinue = isPairWhenEditingStack(stk, elm);
-			if(!isContinue) {
+			if (!isContinue) {
 				return PARENTHESES.UNBALANCED;
 			}
 		}
+
+		// すべての要素が入れ子でなかった
 		return PARENTHESES.BALANCED;
 	}
 }
