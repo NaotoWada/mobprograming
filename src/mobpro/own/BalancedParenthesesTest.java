@@ -23,6 +23,8 @@ public class BalancedParenthesesTest {
 	@Test
 	public void test_カッコペアが入れ子指定された場合UNBALANCEDが返却される() {
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("({)}"));
+		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("([{}][)]"));
+		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("[(][{}])"));
 	}
 	
 	@Test
