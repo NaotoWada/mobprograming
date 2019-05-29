@@ -31,6 +31,6 @@ public class BlncdPrnths {
 	}
 
 	public static boolean isHang(String string) {
-		return false;
+		return true;
 	}
 }
