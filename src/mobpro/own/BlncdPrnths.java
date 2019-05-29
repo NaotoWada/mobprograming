@@ -39,6 +39,8 @@ public class BlncdPrnths {
 	}
 
 	public static Stack<String> addOpenQueue(String string) {
-		return null;
+		Stack<String> stack = new Stack<>();
+		stack.push(string);
+		return stack;
 	}
 }
