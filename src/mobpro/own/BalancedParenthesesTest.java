@@ -35,7 +35,6 @@ public class BalancedParenthesesTest {
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("))))"));
 	}
 
-
 	@Test
 	public void test_閉じカッコが多い場合UNBALANCEDが返却される() {
 		assertEquals(PARENTHESES.UNBALANCED, BlncdPrnths.judge("()))"));

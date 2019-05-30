@@ -86,7 +86,7 @@ public class BlncdPrnths {
 	 */
 	public static boolean isPairWhenEditingStack(Stack<String> stck, String prnths) {
 		if (OPEN_LIST.contains(prnths)) {
-			// 開きカッコの場合
+			// 開きカッコの場合は無条件で追加して閉じカッコと同じ種類か判定する
 			stck.push(prnths);
 			return true;
 		}
@@ -96,10 +96,14 @@ public class BlncdPrnths {
 			// スタックが空の状態で閉じカッコが入った場合は閉じカッコが多い場合
 			return false;
 		}
+
 		if (isPair(stck.lastElement(), prnths)) {
+			// スタックにペアが存在するので、ペアがあれば取り除く。
 			stck.pop();
 			return true;
+
 		} else {
+			// ペアがない場合、入れ子の状態
 			return false;
 		}
 	}
