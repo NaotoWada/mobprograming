@@ -28,10 +28,6 @@ public class BlncdPrnths {
 	 * @return 正常なペアの場合PARENTHESES.BALANCED、それ以外はPARENTHESES.UNBALANCED
 	 */
 	public static PARENTHESES judge(String string) {
-		if (isOdd(string)) {
-			// 奇数の場合は規定外
-			return PARENTHESES.UNBALANCED;
-		}
 
 		// スタックに詰めつつ判定を行う。1回でも入れ子になったら終了
 		Stack<String> stk = new Stack<>();
