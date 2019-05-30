@@ -28,10 +28,6 @@ public class BlncdPrnths {
 	 * @return 正常なペアの場合PARENTHESES.BALANCED、それ以外はPARENTHESES.UNBALANCED
 	 */
 	public static PARENTHESES judge(String string) {
-		if (isFirstClose(string) || isLastOpen(string)) {
-			// 最初と最後の要素が規定外の場合
-			return PARENTHESES.UNBALANCED;
-		}
 		if (isOdd(string)) {
 			// 奇数の場合は規定外
 			return PARENTHESES.UNBALANCED;
