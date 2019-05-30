@@ -1,21 +1,25 @@
 package mobpro.own;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Stack;
 
 public class BlncdPrnths {
 
-	private static final List<String> CLOSE_LIST = Arrays.asList("]", ")", "}");
-	private static final List<String> OPEN_LIST = Arrays.asList("[", "(", "{");
+	// 不変リストにしてもいいけど、今回の場合そこまで重要じゃないので可変リストで宣言
+	private static final List<String> CLOSE_LIST = new ArrayList<>();
+	private static final List<String> OPEN_LIST = new ArrayList<>();
 	private static final Map<String, String> PAIR = new HashMap<>();
 	static {
-		for (int i = 0; i < 3; i++) {
-			String op = OPEN_LIST.get(i);
-			String cl = CLOSE_LIST.get(i);
-			PAIR.put(op, cl);
+		PAIR.put("[", "]");
+		PAIR.put("(", ")");
+		PAIR.put("{", "}");
+		for (Entry<String, String> entry : PAIR.entrySet()) {
+			OPEN_LIST.add(entry.getKey());
+			CLOSE_LIST.add(entry.getValue());
 		}
 	}
 
