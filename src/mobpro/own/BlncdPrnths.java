@@ -92,6 +92,9 @@ public class BlncdPrnths {
 		}
 
 		// 閉じカッコの場合
+		if (stck.isEmpty()) {
+			// スタックが空の状態で閉じカッコが入った場合は閉じカッコが多い場合
+		}
 		if (isPair(stck.lastElement(), prnths)) {
 			stck.pop();
 			return true;
