@@ -80,36 +80,6 @@ public class BalancedParenthesesTest {
 	}
 
 	@Test
-	public void test_最後が開きカッコの場合はTrueが返却される() {
-		assertTrue(BlncdPrnths.isLastOpen("["));
-		assertTrue(BlncdPrnths.isLastOpen("("));
-		assertTrue(BlncdPrnths.isLastOpen("{"));
-
-		assertTrue(BlncdPrnths.isLastOpen("]["));
-		assertTrue(BlncdPrnths.isLastOpen(")("));
-		assertTrue(BlncdPrnths.isLastOpen("}{"));
-
-		assertFalse(BlncdPrnths.isLastOpen("]"));
-		assertFalse(BlncdPrnths.isLastOpen(")"));
-		assertFalse(BlncdPrnths.isLastOpen("}"));
-	}
-
-	@Test
-	public void test_最初が閉じカッコの場合はTrueが返却される() {
-		assertTrue(BlncdPrnths.isFirstClose("]"));
-		assertTrue(BlncdPrnths.isFirstClose(")"));
-		assertTrue(BlncdPrnths.isFirstClose("}"));
-
-		assertTrue(BlncdPrnths.isFirstClose("]["));
-		assertTrue(BlncdPrnths.isFirstClose(")("));
-		assertTrue(BlncdPrnths.isFirstClose("}{"));
-
-		assertFalse(BlncdPrnths.isFirstClose("["));
-		assertFalse(BlncdPrnths.isFirstClose("("));
-		assertFalse(BlncdPrnths.isFirstClose("{"));
-	}
-
-	@Test
 	public void test_同じ種類のカッコの場合trueを返却する() {
 		assertTrue(BlncdPrnths.isPair("[", "]"));
 		assertTrue(BlncdPrnths.isPair("(", ")"));

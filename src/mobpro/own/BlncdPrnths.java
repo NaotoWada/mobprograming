@@ -61,21 +61,6 @@ public class BlncdPrnths {
 		return true;
 	}
 
-	public static boolean isFirstClose(String string) {
-		if (CLOSE_LIST.contains(string.substring(0, 1))) {
-			return true;
-		}
-		return false;
-	}
-
-	public static boolean isLastOpen(String string) {
-		int len = string.length();
-		if (OPEN_LIST.contains(string.substring(len - 1, len))) {
-			return true;
-		}
-		return false;
-	}
-
 	/**
 	 * 入力されたスタックインスタンスを書き換えながら、ペア判定を行う関数
 	 * <p>スタックに格納されるのは”開きカッコ”のみ
