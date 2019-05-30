@@ -47,8 +47,15 @@ public class BlncdPrnths {
 			}
 		}
 
-		// すべての要素が入れ子でなかった
-		return PARENTHESES.BALANCED;
+		if (stk.isEmpty()) {
+			// すべての要素が入れ子でなかった
+			return PARENTHESES.BALANCED;
+
+		} else {
+			// 開きカッコが多い場合はスタックに要素が残ってしまう
+			return PARENTHESES.UNBALANCED;
+		}
+
 	}
 
 	public static boolean isOdd(String parentheses) {
