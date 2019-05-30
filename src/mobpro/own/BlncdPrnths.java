@@ -50,13 +50,6 @@ public class BlncdPrnths {
 
 	}
 
-	public static boolean isOdd(String parentheses) {
-		if (parentheses.length() % 2 == 0) {
-			return false;
-		}
-		return true;
-	}
-
 	/**
 	 * 入力されたスタックインスタンスを書き換えながら、ペア判定を行う関数
 	 * <p>スタックに格納されるのは”開きカッコ”のみ

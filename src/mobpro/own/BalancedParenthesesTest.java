@@ -46,12 +46,6 @@ public class BalancedParenthesesTest {
 	}
 
 	@Test
-	public void test_奇数長の場合はTrueが返却される() {
-		assertTrue(BlncdPrnths.isOdd("["));
-		assertFalse(BlncdPrnths.isOdd("[["));
-	}
-
-	@Test
 	public void test_閉じカッコと同じ種類の開きカッコがPOPされる() {
 		Stack<String> stck = new Stack<>();
 		stck.push("{");
