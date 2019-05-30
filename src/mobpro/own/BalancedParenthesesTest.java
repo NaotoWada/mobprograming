@@ -52,13 +52,13 @@ public class BalancedParenthesesTest {
 		stck.push("(");
 		stck.push("[");
 
-		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "]"));
-		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
-		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "}"));
+		assertTrue(BlncdPrnths.isBalancedWhenEditingStack(stck, "]"));
+		assertTrue(BlncdPrnths.isBalancedWhenEditingStack(stck, ")"));
+		assertTrue(BlncdPrnths.isBalancedWhenEditingStack(stck, "}"));
 		assertTrue(stck.isEmpty());
 
 		stck.push("[");
-		assertFalse(BlncdPrnths.isPairWhenEditingStack(stck, ")"));
+		assertFalse(BlncdPrnths.isBalancedWhenEditingStack(stck, ")"));
 		assertEquals(stck.size(), 1);
 	}
 
@@ -68,8 +68,8 @@ public class BalancedParenthesesTest {
 		stck.push("[");
 		stck.push("{");
 
-		assertFalse(BlncdPrnths.isPairWhenEditingStack(stck, "]"));
-		assertTrue(BlncdPrnths.isPairWhenEditingStack(stck, "}"));
+		assertFalse(BlncdPrnths.isBalancedWhenEditingStack(stck, "]"));
+		assertTrue(BlncdPrnths.isBalancedWhenEditingStack(stck, "}"));
 		assertEquals(stck.size(), 1);
 	}
 
